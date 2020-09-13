@@ -6,14 +6,17 @@ Material paper with top Label
 
 Here's an example of basic usage:
 
-```js
+```tsx
 import React, { useState } from 'react';
 
 function MyApp() {
 
   return (
     <div>
+      <PaperLabeled title="Title">
+      </PaperLabeled>
     </div>
   );
 }
 ```
+![alt text](https://raw.githubusercontent.com/gabimig/paper-labered/master/PaperLabeled.PNG)

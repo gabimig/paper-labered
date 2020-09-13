@@ -1,0 +1,27 @@
+{
+  "name": "paperlabeled-material",
+  "version": "1.0.0",
+  "description": "Paper with top label based on material-ui",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Míguez Míguez",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-react": "^7.20.6",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@types/node": "^14.10.1",
+    "@types/react": "^16.9.49",
+    "react": "^16.13.1"
+  }
+}

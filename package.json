@@ -1,5 +1,5 @@
 {
-  "name": "paperlabeled-material",
+  "name": "paperlabeled-material-ui",
   "version": "1.0.0",
   "description": "Paper with top label based on material-ui",
   "main": "./dist/index.js",

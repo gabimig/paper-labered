@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Paper } from '@material-ui/core'
 
 const useStyles = makeStyles(() => createStyles({
     papper: {
-        padding: 10,
+        padding: 13,
     },
     papperLabel: {
         textAlign: 'left',

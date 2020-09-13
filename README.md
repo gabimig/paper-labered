@@ -30,3 +30,16 @@ function MyApp() {
 }
 ```
 ![alt text](https://raw.githubusercontent.com/gabimig/paper-labered/master/PaperLabeled.PNG)
+
+## User guide
+
+### PaperLabeled
+
+Displays a material-ui Paper with a label in the top margin
+
+#### props
+
+| Prop name | Description | Default value |
+| ------------- | ------------- | ------------- |
+| title  | Title that will be shown in the top margin of the Paper  | '' |
+| labelComp  | React component that will be shown in the top margin of the Paper instead of the title. This option will make title prop disabled. | undefined |

@@ -1,13 +1,16 @@
 import React from 'react'
-import { createStyles, makeStyles, Paper } from '@material-ui/core'
+import {
+    createStyles, makeStyles, Paper, PaperProps,
+} from '@material-ui/core'
+import clsx from 'clsx'
 
 const useStyles = makeStyles(() => createStyles({
     papper: {
-        padding: 13,
+        padding: 10,
     },
     papperLabel: {
         textAlign: 'left',
-        marginTop: -23,
+        marginTop: -24,
     },
     papperLabelText: {
         backgroundColor: 'white',
@@ -15,20 +18,34 @@ const useStyles = makeStyles(() => createStyles({
 }))
 
 type PaperLabeledProps = {
-    children?: React.ReactNode,
+    children: React.ReactNode,
+    paperProps?: PaperProps,
     title?: string,
     labelComp?: React.ReactElement,
+    labelClass?: string,
+    labelClassContainer?: string,
 }
 
-const PaperLabeled = ({ children, title, labelComp }: PaperLabeledProps): React.ReactElement => {
+const PaperLabeled = ({
+    paperProps, children, title, labelComp, labelClass, labelClassContainer,
+}: PaperLabeledProps): React.ReactElement => {
     const classes = useStyles()
-    const Comp = labelComp || <span data-testid="default-label" className={classes.papperLabelText}>{title}</span>
+    const paperPropsDefault: PaperProps = {
+        variant: 'outlined',
+        ...paperProps,
+        className: clsx(classes.papper, paperProps?.className),
+    }
+    const labelClassTextInner = clsx(classes.papperLabelText, labelClass)
+    const labelClassInner = clsx(classes.papperLabel, labelClassContainer)
+
+    const Comp = labelComp || <span className={labelClassTextInner}>{title}</span>
 
     return (
-        <Paper variant="outlined" className={classes.papper}>
-            <div className={classes.papperLabel}>
+        // <Paper variant="outlined" className={classes.papper} {...paperProps}>
+        <Paper {...paperPropsDefault}>
+            <p className={labelClassInner}>
                 {Comp}
-            </div>
+            </p>
             <div>
                 {children}
             </div>
@@ -37,9 +54,11 @@ const PaperLabeled = ({ children, title, labelComp }: PaperLabeledProps): React.
 }
 
 PaperLabeled.defaultProps = {
+    labelClass: '',
+    labelClassContainer: '',
     title: '',
     labelComp: undefined,
-    children: undefined,
+    paperProps: {},
 }
 
 export default PaperLabeled

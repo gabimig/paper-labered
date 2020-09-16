@@ -41,7 +41,6 @@ const PaperLabeled = ({
     const Comp = labelComp || <span className={labelClassTextInner}>{title}</span>
 
     return (
-        // <Paper variant="outlined" className={classes.papper} {...paperProps}>
         <Paper {...paperPropsDefault}>
             <p className={labelClassInner}>
                 {Comp}

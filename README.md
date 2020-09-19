@@ -39,7 +39,10 @@ Displays a material-ui Paper with a label in the top margin
 
 #### props
 
-| Prop name | Description | Default value |
-| ------------- | ------------- | ------------- |
-| title  | Title that will be shown in the top margin of the Paper  | '' |
-| labelComp  | React component that will be shown in the top margin of the Paper instead of the title. This option will make title prop disabled. | undefined |
+| Prop name | Type | Description | Default value |
+| ------------- | ------------- | ------------- | ------------- |
+| title | string | Title that will be shown in the top margin of the Paper  | '' |
+| labelComp | React.ReactElement | React component that will be shown in the top margin of the Paper instead of the title. This option will make title prop disabled. | undefined |
+| paperProps | PaperProps | Properties of the Material UI Papper | undefined |
+| labelClass | string | CSS class name for the label | '' |
+| labelClassContainer | string | CSS class name for the label container | '' |

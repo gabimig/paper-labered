@@ -1,6 +1,6 @@
 {
   "name": "paperlabeled-material-ui",
-  "version": "1.5.0",
+  "version": "1.6.5",
   "description": "Paper with top label based on material-ui",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "publish": "npm publish"
   },
   "jest": {
     "preset": "ts-jest",

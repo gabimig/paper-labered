@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => createStyles({
 }))
 
 type PaperLabeledProps = {
-    children: React.ReactNode,
+    children?: React.ReactNode,
     paperProps?: PaperProps,
     title?: string,
     labelComp?: React.ReactElement,
@@ -38,13 +38,13 @@ const PaperLabeled = ({
     const labelClassTextInner = clsx(classes.papperLabelText, labelClass)
     const labelClassInner = clsx(classes.papperLabel, labelClassContainer)
 
-    const Comp = labelComp || <span className={labelClassTextInner}>{title}</span>
+    const Comp = labelComp || <span data-testid="default-label" className={labelClassTextInner}>{title}</span>
 
     return (
         <Paper {...paperPropsDefault}>
-            <p className={labelClassInner}>
+            <div className={labelClassInner}>
                 {Comp}
-            </p>
+            </div>
             <div>
                 {children}
             </div>
@@ -58,6 +58,7 @@ PaperLabeled.defaultProps = {
     title: '',
     labelComp: undefined,
     paperProps: {},
+    children: undefined,
 }
 
 export default PaperLabeled
